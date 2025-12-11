@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+</head>
+<body>
+    <div class="card">
+        <h1>LOVE PREDICTOR!</h1>
+        <input type="text" name="" id="name" placeholder="Enter your name">
+        <input type="text" name="" id="name" placeholder="Partners name">
+        <p id="result"></p>
+        <button onclick="match()">Predict</button>
+    </div>
+    <script>
+        function match(){
+            var name=document.getElementById("name").value;
+            var name=document.getElementById("name").value;
+            var lovepercent=Math.floor(Math.random()*101);
+            var resultText="";
+            var resultClass="";     
+            if(lovepercent>80){
+                resultText= "Perfect Match!💕Destiny approves!";
+            }else if(lovepercent>=60){
+                resultText= "Strong Connection!💖Love is Blooming";
+            }
+            else if(lovepercent>=40){
+                resultText="There's Potential!🔥Keep Trying";
+            }
+            else if(lovepercent>=20){
+                resultText="May be with some effort!🙂";
+            }
+            else{
+                resultText= "Doesn't work 😥";
+            }
+            
+            var resultPara=document.getElementById("result");
+            resultPara.innerHTML=resultText;
+            resultPara.className=resultClass;
+        }
+    </script>
+    <style>
+         body{
+                background-color: rgb(203, 106, 183);
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                height:100vh;
+                background-image: url("lovecalc.webp");
+                background-size: contain;
+                display:flex;
+                text-align: center;
+                
+                
+
+            }
+            .card{
+                height: 200px;
+                width: 400px;
+                background-color: pink;
+                border:4px solid rgb(214, 9, 159) ;
+                border-radius: 5%;
+                padding: 10px;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                box-shadow: 0px 0px 10px rgb(95, 3, 95);
+                margin: 5px;
+            }
+            button{
+                background-color: lightpink;
+                color: rgb(7, 6, 7);
+            }
+            h1{
+                background-color: rgb(194, 145, 184);
+                border: black;
+                border-radius: 10%;
+                
+            }
+            
+    </style>
+</body>
+</html>

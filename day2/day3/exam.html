@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+</head>
+<body>
+    <div class="box">
+        <h1>Exam Pass Fail Predictor</h1>
+        <input type="text" name="" id="name" placeholder="Enter your name">
+        <p id="result"></p>
+        <button onclick="exam()">Submit</button>
+    </div>
+     <script>
+        function exam(){
+            var name=document.getElementById("name").value;
+            var marks=Math.floor(Math.random()*101);
+            var resultText="";
+            var resultClass="";
+            if(marks<35){
+                resultText= name + " Has FAILED the exam";
+                resultClass="fail";
+            }else{
+                resultClass="pass";
+                if(marks>=75){
+                    resultText= name + " PASSED with Distinction";
+            }
+            else if(marks>=60){
+                resultText= name + " PASSED with First Class";
+            }
+            else if(marks>=50){
+                resultText= name + " PASSED with Second Class";
+            }
+            else{
+                resultText= name + " PASSED (Just Pass)";
+            }
+            }
+            var resultPara=document.getElementById("result");
+            resultPara.innerHTML=resultText;
+            resultPara.className=resultClass;
+           }
+         </script>
+         <style>
+            body{
+                background-color: rgb(188, 164, 164);
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                height:80vh;
+            }
+            .box{
+                height: 400px;
+                width: 300px;
+                background-color: rgb(188, 207, 103);
+                border:4px solid black ;
+                border-radius: 5%;
+                padding: 10px;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                box-shadow: 0px 0px 10px darkmagenta;
+            }
+            button{
+                background-color: lightpink;
+                color: brown;
+            }
+            h1{
+                background-color: rgb(218, 183, 70);
+                border: black;
+                border-radius: 10%;
+                
+            }
+            .fail{
+                color: red;
+            }
+            .pass{
+                color: green;
+            }
+         </style>
+</body>
+</html>
